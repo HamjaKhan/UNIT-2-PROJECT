@@ -1,0 +1,54 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+}
+#sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    /* left: -300px; */
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#login {
+    background-color: grey;
+    /* color: black; */
+}
+
+#sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 18px;
+    color: black;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+}
+#sidebar ul a i {
+    margin-right: 16px;
+}
+
+#sidebar .toggle {
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
+.toggle span {
+    width: 45px;
+    height: 4px;
+    background-color: black;
+    display: block;
+    margin-top: 4px;
+}
