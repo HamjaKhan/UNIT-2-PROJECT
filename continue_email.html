@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script>
+     
+  </script>
+    <style>
+        *{
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        #container{
+            height: 600px;
+            width: 500px;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+        #container>p{
+            color: grey;
+        }
+        .email{
+            width: 94%;
+            padding: 15px;
+            border: 1PX SOLID rgb(180, 173, 173);
+            border-radius: 5PX;
+        }
+
+        .continue_button{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 160px;
+            padding-right: 160px;
+            border-radius: 5px;
+            border: 0;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin: auto;
+            margin-top: 78%;
+            color: white;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="left_arrow"><img src="/icons and images/download.png" width="18px"/></div>
+
+        <h3>Enter Email ID</h3>
+        <p>We'll verify if the email is registered with us</p>
+        <br>
+
+        <input class="email" type="email" placeholder="Email ID"/>
+
+
+        <center><button class="continue_button">CONTINUE</button></center>
+
+      
+    </div>
+
+</body>
+</html>
+
+<script>
+    document.querySelector(".continue_button").addEventListener("click",myfun)
+
+    function myfun(){
+        window.location.href="continue_email_pass.html"
+        
+    }
+
+    document.querySelector(".left_arrow").addEventListener("click",myfunc)
+
+function myfunc(){
+    window.location.href="login.html"
+    
+}
+</script>
