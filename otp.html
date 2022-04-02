@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Self Drive Car Rentals | Rent a Car | Car Hire @Zoomcar</title>
+
+    <style>
+        *{
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+.password-form-container{
+    width: 40vw;
+    height: auto;
+    margin:auto;
+}
+
+        .form-heading{
+            font-family: "IBM Plex Sans";
+            font-size: 18px;
+             font-weight: 600;
+             line-height: 24px;
+             letter-spacing: 0.16px;
+             color: #1f1f1f;
+        }
+        .sub-heading {
+    font-family: "IBM Plex Sans";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    color: #666;
+    padding-top: 8px;
+    padding-bottom: 16px;
+        }
+        .login-form-container .otp-input-container, .login-form-container .password-input, .password-form-container .otp-input-container, .password-form-container .password-input {
+    padding-top: 24px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.text-input-wrapper input {
+    border: none;
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: .24px;
+    color: #666;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    width: 100%;
+    padding: 16px 12px;
+    outline: none;
+}
+.text-input-wrapper input:placeholder-shown+label {
+    cursor: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translateY(2.125rem);
+}
+#continue_btn{
+           padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 160px;
+            padding-right: 160px;
+            border-radius: 5px;
+            border: 0;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            margin-top: 50%;
+            color: white; 
+            background-color: #e0e0e0 ;
+            font-weight: BOLD;
+            margin-left: 80px;
+        } 
+        #errorMsg{
+            color:red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-form-container">
+        <div class="form-heading">Enter 6-digit OTP</div>
+         <div class="form-sub-heading">
+             <span>OTP was sent to <bdo dir="ltr" id="phoneNumber"></bdo></span>
+              <a class="action">Edit</a>
+            </div>
+             <div class="otp-input-container">
+                 <div class="text-input-wrapper">
+                     <input id="otpBox" name="otp" id="otp" placeholder="OTP" maxlength="6" inputmode="numeric" autocomplete="off" type="text" class="">
+                    </div>
+                </div>
+                <div id="errorMsg"></div>
+                     <div class="other-actions" style="color:#10a310" onclick="sendOtp()">Resend OTP</div>
+                      <div class="other-actions" style="color:#10a310; margin-top:20px;" id="usePassword">Use Password</div>
+                      <div class="continue-button button-container disabled">
+                         
+                        </div>
+
+                        <button id="continue_btn">CONTINUE</button>
+                    </div>
+</body>
+</html>
+<script>
+
+sendOtp();
+let otp;
+    function sendOtp(){
+        setTimeout(()=>{
+            otp = Math.floor(Math.random() * 900000) + 99999;
+            alert(otp);
+        },3000)
+    }
+
+    let otpBox = document.getElementById("otpBox");
+    otpBox.addEventListener("keydown",changeBtn);
+    otpBox.addEventListener("keyup", changeBtn);
+     function changeBtn(){
+      let otpIs = document.getElementById("otpBox").value;
+      if(otpIs.length === 6){
+          document.getElementById("continue_btn").style.backgroundColor = "#10a310"
+      }
+     }
+
+     document.getElementById("continue_btn").addEventListener("click",function(){
+
+        let enteredOtp = document.getElementById("otpBox").value;
+         if(otp == enteredOtp){
+            document.getElementById("errorMsg").textContent = "";
+            window.location.href="https://www.google.co.in/"
+         }else{
+            document.getElementById("errorMsg").textContent = "Invalid OTP";
+         }
+     })
+
+     let user = JSON.parse(localStorage.getItem("user"));
+     document.getElementById("phoneNumber").textContent = `+91${user}`
+
+
+     document.getElementById("usePassword").addEventListener("click",function(){
+         window.location.href = "continue_email_pass.html"
+     })
+</script>
