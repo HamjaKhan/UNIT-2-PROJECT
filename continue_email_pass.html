@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    #container{
+   height: 600px;
+            width: 500px;
+            /* border: 1px solid red; */
+            margin: auto;padding-top: 2%;
+    }
+    .pass_inp{
+        width: 94%;
+            padding: 15px;
+            border: 1PX SOLID rgb(180, 173, 173);
+            border-radius: 5PX;
+    }
+    .continue_button{
+        padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 160px;
+            padding-right: 160px;
+            border-radius: 5px;
+            border: 0;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin: auto;
+            margin-top: 62%;
+            color: white;
+            background-color: #e0e0e0;
+
+    }
+    .green{
+        color: #31b26e;
+    }
+</style>
+<body>
+    <div id="container">
+            <h3>
+                Enter password
+            </h3>
+
+            <br>
+            <input id="userPassword" class="pass_inp"  type="password" placeholder="password"/>
+            <BR>
+                <p class="green">Forgot Password?</p>
+
+            <center><button class="continue_button" id="continue_btn">CONTINUE</button></center>
+
+    </div>
+</body>
+</html>
+<script>
+
+    let inputBox = document.getElementById("userPassword");
+    inputBox.addEventListener("keydown", handleInput);
+    inputBox.addEventListener("keyup", handleInput);
+
+    function handleInput(){
+        inputBox = document.getElementById("userPassword")
+        if(inputBox.value.length >= 6){
+            document.getElementById("continue_btn").style.backgroundColor= "#10a310";
+        }
+        else{
+            document.getElementById("continue_btn").style.backgroundColor= "#e0e0e0";
+        }
+    }
+
+    document.getElementById("continue_btn").addEventListener("click", function(){
+        let userPassword = document.getElementById("userPassword").value;
+        let userNum = JSON.parse(localStorage.getItem("user"));
+        let userData = JSON.parse(localStorage.getItem("currentUser"));
+
+        userData.forEach(element => {
+            if(element.phoneNumber == userNum){
+                if(element.password == userPassword){
+                    window.location.href = "https://google.com";
+                }
+                else{
+                    alert("wrong password")
+                }
+            }
+        });
+
+
+    })
+</script>
