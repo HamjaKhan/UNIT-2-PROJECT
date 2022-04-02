@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Drive Car Rentals | Rent a Car | Car Hire @Zoomcar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+         body{
+            font-family: 'IBM Plex Sans', sans-serif;;
+        }
+        *>button{
+            cursor: pointer;
+        }
+        #navbar{
+            background-color: black;
+            height: 81px;
+            width: 100%;
+            display: flex;
+        }
+        #sidebar{
+          font-size: 19px;
+          margin-top: 7px;
+          margin-left: 25px;
+          background-color: black;
+          color: white;
+          border: none;
+        }
+       #logo{
+           font-size: 32px;
+           color: white;
+           margin-left: 20px;
+           margin-top: 13px;
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;       
+        }
+      #imgnavbar{
+              height: 43px;
+              margin-left: 20px;
+              margin-top: 19px;
+      }
+      #img{
+          justify-content: flex-start;
+          width: 48%;
+      }
+      #rightnav{
+          width: 49%;
+          display: flex;
+          justify-content: space-around;
+      }
+      #rightnav>button{
+          color: white;
+          background-color: black;
+          border: none;
+          font-weight: bold;
+          font-size: 20px;
+      }
+      #container{
+          display: flex;
+      }
+      #leftbigdiv{
+          width: 19%;
+          height: auto;
+          border: 2px solid #e0e0e0 ;
+          margin-top: 20px;
+          border-radius: 9px;
+          margin-left: 220px;
+          padding-left: 40px;
+      }
+      #delivery{
+          display: flex;
+          border-radius: 4px;
+          border: 0.1px solid #e0e0e0;
+          width: 86%;
+          height: 50px;
+      }
+      #delivery>div{
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0.2px solid #e0e0e0;
+          cursor: pointer;
+      }
+      #seatdiv{
+          display: flex;
+          border-radius: 4px;
+          border: 1px solid #e0e0e0;
+          width: 86%;
+          height: 50px;
+      }
+      #seatdiv>div{
+          width: 33%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0.2px solid #e0e0e0;
+          cursor: pointer;
+      }
+      #Transmission{
+          display: flex;
+          border-radius: 4px;
+          border: 1px solid #e0e0e0;
+          width: 86%;
+          height: 50px;
+      }
+      #Transmission>div{
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0.2px solid #e0e0e0;
+          cursor: pointer;
+      }
+      #cartypediv{
+          display: flex;
+          border-radius: 4px;
+          border: 1px solid #e0e0e0;
+          width: 86%;
+          height: 50px;
+      }
+      #cartypediv>div{
+          width: 33%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0.2px solid #e0e0e0;
+          cursor: pointer;
+      }
+     #lowerpara{
+          color: #6b6cc3;
+          text-align: justify;
+          font-size: 12px;
+          margin-right: 60px;
+          margin-left: 10px;
+          margin-top: 40px;
+          margin-bottom: 64px;
+     }
+      #rightdiv{
+          width: 53%;
+          height:600px;
+          margin-top: 20px;
+          margin-left: 10px;
+      }
+      #Topgreendiv{
+       display: flex;
+       justify-content: space-between;
+      }
+      #Topgreendiv>div{
+          width: 48%;
+          height: 49px;
+          border: 1px solid green;
+          border-radius: 5px;
+      }
+      #Enjoy{
+          margin-top: 30px;
+          margin-left: 30px;
+          font-size: 14px;
+      }
+
+      #Enjoy+p{
+          color: #a8a8a8;
+          margin-top: -14px;
+          font-size: 11px;
+          margin-left: 30px;
+          letter-spacing: 0.4px;
+          margin-bottom: 50px;
+      }
+      #outsidediv{
+          width: 100%;
+          height: auto;
+          display: flex;
+          margin-top: 25px;
+      }
+      #carimgdiv{
+          width: 180px;
+          height: 100%;
+          padding-left: 10px;
+      }
+      #carimg{
+          width: 100%;
+          height: 120px;
+      }
+      #divaftercar{
+          width: 300px;
+          height: 100%;
+          
+          margin-left: 20px;
+      }
+      #lpcationafter{
+          width: 230px;
+          height: 18px;
+      }
+      #pricediv{
+          width: 220px;
+          height: 100%;
+         
+          margin-left: 60px;
+      }
+      #divaftercarsub1{
+          width: 100%;
+          height: 20px;
+          margin-top: 15px;
+          display: flex;
+          color: #9c9191;
+      }
+      #divaftercarsub1>div{
+          font-size: 12px;
+      }
+      #fuel{
+          margin-left: 12px;
+      }
+      #carname{
+          font-weight: bold;
+      }
+      #divaftercarsub2{
+          width: 100%;
+          height: 18px;
+          margin-top: 10px;
+          display: flex;
+          font-size: 12px;
+      }
+      #divaftercarsub3{
+          width: 100%;
+          height: 18px;
+          margin-top: 10px;
+          display: flex;
+          font-size: 12px;
+      }
+      #divinsidesub2{
+          width: 20px;
+          height: 100%;
+
+
+      }
+      #divinsidesub2>img{
+          width: 100%;
+          height: 100%;
+      }
+      #divinsidesub3{
+          width: 20px;
+          height: 100%;
+
+
+      }
+      #divinsidesub3>img{
+          width: 100%;
+          height: 100%;
+      }
+      #location{
+          color: #898a99;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: auto;
+          font-size: 12px;
+      }
+    ::-webkit-scrollbar {
+    display: none;
+}
+      #div1insideprice{
+       width: 100%;
+       height: 35px;
+       display: flex;
+       font-weight: bold;
+  }
+  #div2insideprice{
+       width: 100%;
+       height: 35px;
+       display: flex;
+  }
+  #div2insideprice+button{
+      width: 130px;
+      height: 50px;
+      border-radius: 5px;
+      border: 1px solid green;
+  }
+  #div2insideprice+button:hover{
+      background-color: green;
+      color: white;
+  }
+  #off{
+      margin-left: 20px;
+      color: green;
+      font-size: 12px;
+      font-weight: 600;
+  }
+  #cutprice{
+    color: #9c9191;
+    text-decoration: line-through;
+  }
+  #rs{
+      margin-right: 10px;
+  }
+  #rss{
+    color: #9c9191;
+    text-decoration: line-through;
+    margin-right: 3px;
+  }
+  #lowerdiv{
+      margin-top: 30px;
+      width: 100%px;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+  }
+  #lowerdiv>div>button{
+   color: #10a310;
+   margin-top: 30px;
+   border: none;
+   font-weight: 550;
+   letter-spacing: 0.8px
+  }
+  #grayp{
+      color:#9c9191;
+      font-size: 13px;
+      margin-top: -14px;
+  }
+  #lowerdiv>div+p{
+      font-size: 14px;
+  }
+  #lowerdiv>div+div{
+      justify-content: flex-end;
+      width: 190px;
+  }
+  #lowerdiv>div+div>img{
+      width: 100%;;
+  }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <button id="sidebar"><i class="fa-solid fa-bars"></i></button>
+    <div id="img"><img src="2ndimg.png" alt="" id="imgnavbar"></div>
+    <div id="rightnav"><button>Become a Host</button><button>ZMS</button><button>Login/Signup</button></div>
+      </div>
+      
+
+<div id="container">
+    <div id="leftbigdiv">
+        <h3>Seats</h3>
+        <div id="seatdiv">
+            <div id="fourbtn">4</div>
+            <div id="fivebtn">5</div>
+            <div id="sevenbtn">7</div>
+        </div>
+
+        <h3>Car Types</h3>
+        <div id="cartypediv">
+            <div>SUV</div>
+            <div>hatchback</div>
+            <div>Sedan</div>
+        </div>
+
+        <h3>Transmission</h3>
+        <div id="Transmission">
+            <div id="manual">Manual</div>
+            <div id="auto">Automatic</div>
+        </div>
+
+        <h3>Delivery Type</h3>
+        <div id="delivery">
+            <div id="home">Home Delivery</div>
+            <div id="air">Airport</div>
+        </div>
+
+        <p id="lowerpara">Enjoy free kilometers. If you leave the car with excess fuel compared to booking start, value of that extra fuel will be refunded to you</p>
+    </div>
+    <div id="rightdiv">
+      <div id="Topgreendiv">
+         <div></div>
+         <div></div>
+      </div>
+      <h5 id="Enjoy">ENJOY FREE KMS</h5>
+      <p>If you leave the car with Excess fuel compared to booking start, value of that extra fuel will be refunded to you</p>
+       <div id="rightdivvvv"></div>
+
+
+       <div id="lowerdiv">
+        <div>
+        <p>Can't Find The Right Car</p>
+        <p id="grayp">The car I was looking for isn't listed here</p>
+        <button>NOTIFY ME</button>
+        </div>
+        <div>
+            <img src="https://img1.zoomcar.com/images/original/9cb4c0cb2f3656a765db302650c5f867bb31e06a.png?1594715157" alt="">
+        </div>
+    </div>
+    </div>
+
+   
+</div>
+      
+</body>
+</html>
+
+<script>
+
+var arr=[{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d748d92c90c3b84a32f4115da1e5bd3f3f352937.jpg?1615958311",
+    car_name:"Maruti Baleno (Petrol)",
+    transmission: "Automatic",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"5.0 (29) · 15,359 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"2.5 km Rasta Peth - Near Employement Office",
+    price: 15708,
+    Symbol:"₹ ",
+    pricecut: 20420,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/4ef960af8dace1d0ecd65da0ebf92bead52fd97e.JPG?1637562940",
+    car_name:"Mahindra Thar",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:4,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (53) · 17,643 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"2.7 km Market Yard- Gultekdi",
+    price: 25966,
+    Symbol:"₹ ",
+    pricecut: 33755,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d4ed67c506efdcac3cf25cabff555c095a463990.jpg?1617089835",
+    car_name:"Maruti Suzuki XL6 Petrol",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (53) · 17,643 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"2.7 km Market Yard- Gultekdi",
+    price: 22922,
+    Symbol:"₹ ",
+    pricecut: 29798,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/52e365263029774efd425e426bb35ef4a4212fa7.JPG?1638612593   ",
+    car_name:"Toyota Glanza",
+    transmission: "Manual",
+    fuel:"Diesel",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 1,095 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"4.8 km Wanowrie - Near Kedari Petrol Pump",
+    price: 17070,
+    Symbol:"₹ ",
+    pricecut: 22191,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/bf11b6a57ae2f1ef5b3f309c2d996fb324c6eb3f.JPG?1624082585",
+    car_name:"Tata ALTROZ",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 1,095 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"9.3 km Hadapsar - Near Mega Center",
+    price: 17077,
+    Symbol:"₹ ",
+    pricecut: 22200,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/4ef960af8dace1d0ecd65da0ebf92bead52fd97e.JPG?1637562940",
+    car_name:"Mahindra Thar",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:4,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 1,095 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"4.8 km Wanowrie - Near Kedari Petrol Pump",
+    price: 17070,
+    Symbol:"₹ ",
+    pricecut: 22191,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/4f978e418417cef5f069be1c013ee75b34c294ce.png?1613648724",
+    car_name:"Maruti Swift",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 20,620 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"5.9 km Magarpatta City - Near Amanora Mall",
+    price: 13611,
+    Symbol:"₹ ",
+    pricecut: 17694,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/4ef960af8dace1d0ecd65da0ebf92bead52fd97e.JPG?1637562940",
+    car_name:"Mahindra Thar",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:4,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (53) · 17,643 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"2.7 km Market Yard- Gultekdi",
+    price: 25966,
+    Symbol:"₹ ",
+    pricecut: 33755,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d4ed67c506efdcac3cf25cabff555c095a463990.jpg?1617089835",
+    car_name:"Maruti Suzuki XL6 Petrol",
+    transmission: "Automatic",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (53) · 17,643 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"2.7 km Market Yard- Gultekdi",
+    price: 22922,
+    Symbol:"₹ ",
+    pricecut: 29798,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/52e365263029774efd425e426bb35ef4a4212fa7.JPG?1638612593   ",
+    car_name:"Toyota Glanza",
+    transmission: "Manual",
+    fuel:"Diesel",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 1,095 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"4.8 km Wanowrie - Near Kedari Petrol Pump",
+    price: 17070,
+    Symbol:"₹ ",
+    pricecut: 22191,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://zoomcar-assets.zoomcar.com/photographs/original/6c600fdc587df00ee65b17e3e0a4bce67ec31046.JPG?1638531593",
+    car_name:"hyundai Eon",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (30) · 10,889 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"6.0 km Wanowrie - Near Kedari Petrol Pump",
+    price: 10787,
+    Symbol:"₹",
+    pricecut: 14023,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/308f602bf1c7840a3d1f45d30d82023dba925bfb.JPG?1635852009",
+    car_name:"Skoda RAPID STYLE PLUS",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"5.0 (24) · 94,802 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"6.1 km Warje - Near Dominos Pizza",
+    price: 15386,
+    Symbol:"₹",
+    pricecut: 20001,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d4f137a56d1bcbf2a8f976b5029685d095425930.JPG?1623737903",
+    car_name:"Datsun Go Plus",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"3.8 (7) · 45,252 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"9.4 km Kolhewadi",
+    price: 10091,
+    Symbol:"₹",
+    pricecut: 13110,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/efa1e98bbb81150cf57c98df093de5899dcafcd5.jpg?1640674575",
+    car_name:"Maruti Ertiga",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 22,334 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"6.7 km Khadki",
+    price: 18356,
+    Symbol:"₹",
+    pricecut: 23062,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/59fca001231ef0e5665ea4e6e6b2eb2dd3d920dd.png?1584525284",
+    car_name:"Mahindra TUV 300",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (38) · 22,455 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"10.6 km Undri",
+    price: 14810,
+    Symbol:"₹",
+    pricecut: 19253,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d214904b8ea2db5eee94b476923ecb49e47c37a5.JPG?1624540855",
+    car_name:"Hyundai I20",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:5,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (38) · 22,455 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"10.6 km Undri",
+    price: 14810,
+    Symbol:"₹",
+    pricecut: 19253,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/d4f137a56d1bcbf2a8f976b5029685d095425930.JPG?1623737903",
+    car_name:"Datsun Go Plus",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"3.8 (7) · 45,252 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"9.4 km Kolhewadi",
+    price: 10091,
+    Symbol:"₹",
+    pricecut: 13110,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/efa1e98bbb81150cf57c98df093de5899dcafcd5.jpg?1640674575",
+    car_name:"Maruti Ertiga",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.0 · 22,334 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"6.7 km Khadki",
+    price: 18356,
+    Symbol:"₹",
+    pricecut: 23062,
+    priceoff:"(23% off)"
+},
+{
+    img_url:"https://s3-ap-southeast-1.amazonaws.com/zoomcar/photographs/original/59fca001231ef0e5665ea4e6e6b2eb2dd3d920dd.png?1584525284",
+    car_name:"Mahindra TUV 300",
+    transmission: "Manual",
+    fuel:"Petrol",
+    Seat:7,
+    starurl: "https://zoomcar-assets.zoomcar.com/images/original/b04593cd90f850d14ed46ed739b0371457ef6834.png?1633947533",
+    kmdriven:"4.9 (38) · 22,455 kms driven",
+    img2:"https://zoomcar-assets.zoomcar.com/images/original/40e9206d9e0136c59da4186ca60332a85aac195c.png?1646656062",
+    delivery:"Home Delivery & pickup available",
+    car_location:"10.6 km Undri",
+    price: 14810,
+    Symbol:"₹",
+    pricecut: 19253,
+    priceoff:"(23% off)"
+}
+]
+
+
+
+
+display(arr)
+
+
+function display(arr){
+    var cartcar=[]
+
+    document.querySelector("#rightdivvvv").innerHTML=""
+
+    arr.map(function(elem){
+    var outsidediv = document.createElement("div")
+    outsidediv.setAttribute("id","outsidediv")
+
+    var carimg=document.createElement("img")
+    carimg.src=elem.img_url
+    carimg.setAttribute("id","carimg")
+
+    var carimgdiv=document.createElement("div")
+    carimgdiv.append(carimg)
+    carimgdiv.setAttribute("id","carimgdiv")
+
+    var div1=document.createElement("div")
+    div1.setAttribute("id","carname")
+    div1.innerText=elem.car_name
+
+    var div2=document.createElement("div")
+    div2.innerText=elem.transmission
+    
+
+    var div3=document.createElement("div")
+    div3.innerText=elem.fuel
+    div3.setAttribute("id","fuel")
+
+    var div4=document.createElement("div")
+    div4.innerText=elem.Seat
+    div4.setAttribute("id","fuel")
+
+    var starimg=document.createElement("img")
+    starimg.src=elem.starurl
+
+    var div5=document.createElement("div")
+    div5.innerText=elem.kmdriven
+
+    var img22=document.createElement("img")
+    img22.src=elem.img2
+
+    var div6=document.createElement("div")
+    div6.innerText=elem.delivery
+
+    var div7=document.createElement("div")
+    div7.setAttribute("id","location")
+    div7.innerText=elem.car_location
+
+    var div8=document.createElement("div")
+    div8.setAttribute("id","price")
+    div8.innerText=elem.price
+
+    var divrs=document.createElement("div")
+    divrs.setAttribute("id","rs")
+    divrs.innerText=elem.Symbol
+
+    var divrss=document.createElement("div")
+    divrss.setAttribute("id","rss")
+    divrss.innerText=elem.Symbol
+
+    var div9=document.createElement("div")
+    div9.setAttribute("id","cutprice")
+    div9.innerText=elem.pricecut
+
+    var div10=document.createElement("div")
+    div10.setAttribute("id","off")
+    div10.innerText=elem.priceoff
+    
+
+
+
+   var divaftercar=document.createElement("div")
+       divaftercar.setAttribute("id","divaftercar")
+
+       var divaftercarsub1=document.createElement("div")
+       divaftercarsub1.setAttribute("id","divaftercarsub1")
+
+       var divaftercarsub2=document.createElement("div")
+       divaftercarsub2.setAttribute("id","divaftercarsub2")
+
+       var divaftercarsub3=document.createElement("div")
+       divaftercarsub3.setAttribute("id","divaftercarsub3")
+
+       var lpcationafter=document.createElement("div")
+       lpcationafter.setAttribute("id","lpcationafter")
+
+       var pricediv=document.createElement("div")
+       pricediv.setAttribute("id","pricediv")
+
+    var divinsidesub2=document.createElement("div")
+    divinsidesub2.setAttribute("id","divinsidesub2")
+    divinsidesub2.append(starimg)
+
+    var divinsidesub3=document.createElement("div")
+    divinsidesub3.setAttribute("id","divinsidesub3")
+    divinsidesub3.append(img22)
+
+    divaftercarsub3.append(divinsidesub3,div6)
+
+    divaftercarsub2.append(divinsidesub2,div5)   
+
+    divaftercarsub1.append(div2,div3,div4)   
+
+    var div1insideprice=document.createElement("div")
+    div1insideprice.setAttribute("id","div1insideprice")
+
+    var div2insideprice=document.createElement("div")
+    div2insideprice.setAttribute("id","div2insideprice")
+
+    var bookbtn=document.createElement("button")
+    bookbtn.innerText="Book Now"
+    bookbtn.addEventListener("click",function(){
+        bookcarbbtn(elem)
+    })
+
+
+    div1insideprice.append(divrs,div8)
+
+    div2insideprice.append(divrss,div9,div10)
+
+    pricediv.append(div1insideprice,div2insideprice,bookbtn)
+
+    lpcationafter.append(div7)
+
+    divaftercar.append(div1,divaftercarsub1,divaftercarsub2,divaftercarsub3)
+
+    outsidediv.append(carimgdiv,divaftercar,lpcationafter,pricediv)
+
+    document.querySelector("#rightdivvvv").append(outsidediv)
+
+    function bookcarbbtn(elem){
+     cartcar.push(elem)
+     console.log(cartcar)
+    
+ localStorage.setItem("cartcar",JSON.stringify(cartcar))
+ window.location.href="cart.html"
+}
+
+})
+}
+
+
+document.querySelector("#fourbtn").addEventListener("click",funcfour)
+
+function funcfour(){
+var select=arr.filter(function(elem){
+    return elem.Seat==4
+})
+    
+var bookcararr=JSON.parse(localStorage.getItem("cartcar"))||[]
+
+display(select)
+}
+
+document.querySelector("#fivebtn").addEventListener("click",funcfive)
+
+function funcfive(){
+var select=arr.filter(function(elem){
+    return elem.Seat==5
+})
+    
+display(select)
+}
+
+document.querySelector("#sevenbtn").addEventListener("click",funcseven)
+
+function funcseven(){
+var select=arr.filter(function(elem){
+    return elem.Seat==7
+})
+    
+display(select)
+}
+
+document.querySelector("#manual").addEventListener("click",functransmission)
+
+function functransmission(){
+var select=arr.filter(function(elem){
+    return elem.transmission=="Manual"
+})
+    
+display(select)
+}
+
+document.querySelector("#auto").addEventListener("click",functransmissio)
+
+function functransmissio(){
+var select=arr.filter(function(elem){
+    return elem.transmission=="Automatic"
+})
+    
+display(select)
+}
+
+document.querySelector("#home").addEventListener("click",funcdeliveryy)
+
+function funcdeliveryy(){
+var select=arr.filter(function(elem){
+    return elem.delivery=="Home Delivery & pickup available"
+})
+    
+display(select)
+}
+
+document.querySelector("#air").addEventListener("click",funcdelivery)
+
+function funcdelivery(){
+var select=arr.filter(function(elem){
+    return elem.delivery=="Airport"
+})
+    
+display(select)
+}
+
+
+
+</script>
